@@ -31,6 +31,10 @@ class GroupHelper:
         # submit deletion
         wd.find_element_by_name("delete").click()
 
+    def count(self):
+        wd = self.app.wd
+        return len(wd.find_elements_by_name("selected[]"))
+
     def modify_group_form(self, new_group_data):
         wd = self.app.wd
         self.select_first_group()

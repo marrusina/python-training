@@ -52,10 +52,19 @@ class ContactHelper:
         wd = self.app.wd
         # submit edit
         NavigationHelper.open_home_page(self)
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+        self.select_first_contact()
         self.fill_contact_form(new_contacts_form)
         # submit contact modification
         wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
+
+    def select_first_contact(self):
+        wd = self.app.wd
+        # select first contact
+        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+
+    def count(self):
+        wd = self.app.wd
+        return len(wd.find_elements_by_xpath("//img[@alt='Edit']"))
 
     def del_first_contact(self):
         wd = self.app.wd
