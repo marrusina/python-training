@@ -2,6 +2,7 @@
 from model.contacts import Contacts
 
 def test_modify_contact(app):
+    app.navigation.open_home_page()
     if app.group.count() == 0:
         app.contact.create(
             Contacts(firstname="wer", middlename="wer", lastname="wer", nickname="wer", title="wer", company="wer",
