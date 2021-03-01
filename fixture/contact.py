@@ -1,6 +1,7 @@
 from selenium.webdriver.support.ui import Select
 import time
 from fixture.navigation import NavigationHelper
+from model.contacts import Contacts
 class ContactHelper:
     def __init__(self, app):
         self.app = app
@@ -71,10 +72,21 @@ class ContactHelper:
         # select contact
         NavigationHelper.open_home_page(self)
         wd.find_element_by_name("selected[]").click()
-        # fill contact form for modification
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
 
+    def get_contact_list(self):
+        wd = self.app.wd
+        NavigationHelper.open_home_page(self)
+        contacts = []
+        for element in wd.find_elements_by_xpath("//tr[@name='entry']"):
+            contact_id = element.find_element_by_name("selected[]").get_attribute("value")
+            lastname = element.find_element_by_xpath("./td[2]").text
+            firstname = element.find_element_by_xpath("./td[3]").text
+            contacts.append(Contacts(id=contact_id,
+                                    lastname=lastname,
+                                    firstname=firstname))
+        return contacts
 
 
 
