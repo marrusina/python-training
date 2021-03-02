@@ -56,10 +56,13 @@ class ContactHelper:
             wd.find_element_by_name(field_name).send_keys(text)
 
     def modify_contact_form(self, new_contacts_form):
+        self.select_contact_by_index(0)
+
+    def modify_contact_by_index(self, index, new_contacts_form):
         wd = self.app.wd
         # submit edit
         NavigationHelper.open_home_page(self)
-        self.select_first_contact()
+        self.select_contact_by_index(index)
         wd.find_element_by_xpath("//img[@alt='Edit']").click()
         self.fill_contact_form(new_contacts_form)
         # submit contact modification
@@ -73,18 +76,27 @@ class ContactHelper:
         wd.find_element_by_name("selected[]").click()
         #wd.find_element_by_xpath("//img[@alt='Edit']").click()
 
+    def select_contact_by_index(self, index):
+        wd = self.app.wd
+        # select first contact
+        wd.find_elements_by_name("selected[]")[index].click()
+        #wd.find_element_by_xpath("//img[@alt='Edit']").click()
+
     def count(self):
         wd = self.app.wd
         return len(wd.find_elements_by_name("selected[]"))
 
     def del_first_contact(self):
+        self.del_contact_by_index(0)
+
+    def del_contact_by_index(self, index):
         wd = self.app.wd
         # select contact
         NavigationHelper.open_home_page(self)
-        wd.find_element_by_name("selected[]").click()
+        self.select_contact_by_index(index)
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         try:
-            WebDriverWait(wd, 1).until(EC.alert_is_present(), 'Не дождались алёрта')
+            WebDriverWait(wd, 1).until(EC.alert_is_present(), 'No alert')
             alert = wd.switch_to.alert
             alert.accept()
             wd.find_element_by_css_selector("div.msgbox")
