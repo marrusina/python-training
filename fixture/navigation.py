@@ -13,6 +13,7 @@ class NavigationHelper:
         if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_name("searchstring")) > 0):
             wd.get("http://localhost/addressbook/")
 
+
     def return_to_groups_page(self):
         # return to groups page
         wd = self.app.wd
