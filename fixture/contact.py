@@ -1,4 +1,4 @@
-from selenium.webdriver.support.ui import Select
+from time import *
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -56,14 +56,14 @@ class ContactHelper:
             wd.find_element_by_name(field_name).send_keys(text)
 
     def modify_contact_form(self, new_contacts_form):
-        self.select_contact_by_index(0)
+        self.modify_contact_by_index(0)
 
     def modify_contact_by_index(self, index, new_contacts_form):
         wd = self.app.wd
         # submit edit
         NavigationHelper.open_home_page(self)
         self.select_contact_by_index(index)
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+        self.edit_contact_by_index(index)
         self.fill_contact_form(new_contacts_form)
         # submit contact modification
         wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
@@ -81,6 +81,14 @@ class ContactHelper:
         # select first contact
         wd.find_elements_by_name("selected[]")[index].click()
         #wd.find_element_by_xpath("//img[@alt='Edit']").click()
+
+    def edit_first_contact(self):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+
+    def edit_contact_by_index(self, index):
+        wd = self.app.wd
+        wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
 
     def count(self):
         wd = self.app.wd
@@ -104,7 +112,6 @@ class ContactHelper:
             print("no alert")
         finally:
             NavigationHelper.open_home_page(self)
-        #wd.switch_to_alert().accept()
         NavigationHelper.open_home_page(self)
         self.contact_cache = None
 
