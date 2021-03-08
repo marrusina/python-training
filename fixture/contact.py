@@ -35,6 +35,8 @@ class ContactHelper:
         self.change_fileld_value("home", contacts.home)
         self.change_fileld_value("mobile", contacts.mobile)
         self.change_fileld_value("email", contacts.email)
+        self.change_fileld_value("email2", contacts.email2)
+        self.change_fileld_value("email3", contacts.email3)
         self.change_fileld_value2("bday", contacts.bday)
         self.change_fileld_value2("bmonth", contacts.bmonth)
         self.change_fileld_value("byear", contacts.byear)
