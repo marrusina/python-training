@@ -73,6 +73,18 @@ class ContactHelper:
         NavigationHelper.open_home_page(self)
         self.contact_cache = None
 
+    def modify_contact_by_id(self, id, new_contacts_form):
+        wd = self.app.wd
+        # submit edit
+        NavigationHelper.open_home_page(self)
+        self.select_contact_by_id(id)
+        self.fill_contact_form(new_contacts_form)
+        # submit contact modification
+        wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
+        NavigationHelper.open_home_page(self)
+        self.contact_cache = None
+
+
     def select_first_contact(self):
         wd = self.app.wd
         # select first contact
@@ -80,8 +92,35 @@ class ContactHelper:
 
     def select_contact_by_index(self, index):
         wd = self.app.wd
-        # select first contact
         wd.find_elements_by_name("selected[]")[index].click()
+
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        for element in wd.find_elements_by_xpath("//tr[@name='entry']"):
+            cells = element.find_elements_by_tag_name("td")
+            contact_id = element.find_element_by_name("selected[]").get_attribute("value")
+            print(contact_id)
+            if contact_id != id:
+                pass
+            else:
+                element.find_element_by_css_selector("input[value='%s']" % id).click()
+                time.sleep(4)
+                #element.find_element_by_css_selector("input[value='%s']img[alt='Edit']" % id).click()
+                element.find_element_by_xpath("./td[8]").click()
+                #cells[7].click()
+                time.sleep(4)
+                break
+        #for element in wd.find_element_by_xpath("//tbody"):
+            #line = element.find_elements_by_xpath("//tr[@name='entry']")
+            #for element1 in line:
+                #contact_id = element1.find_element_by_name("selected[]").get_attribute("value")
+                #if contact_id != id:
+                    #pass
+                #else:
+                    #element1.find_element_by_css_selector("input[value='%s']" % id).click()
+                    #element1.find_element_by_xpath("./td[8]").click()
+
+
 
     def edit_first_contact(self):
         wd = self.app.wd
@@ -111,6 +150,24 @@ class ContactHelper:
         # select contact
         NavigationHelper.open_home_page(self)
         self.select_contact_by_index(index)
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        try:
+            WebDriverWait(wd, 1).until(EC.alert_is_present(), 'No alert')
+            alert = wd.switch_to.alert
+            alert.accept()
+            wd.find_element_by_css_selector("div.msgbox")
+        except TimeoutException:
+            print("no alert")
+        finally:
+            NavigationHelper.open_home_page(self)
+        NavigationHelper.open_home_page(self)
+        self.contact_cache = None
+
+    def del_contact_by_id(self, id):
+        wd = self.app.wd
+        # select contact
+        NavigationHelper.open_home_page(self)
+        self.select_contact_by_id(id)
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         try:
             WebDriverWait(wd, 1).until(EC.alert_is_present(), 'No alert')
