@@ -77,7 +77,7 @@ class ContactHelper:
         wd = self.app.wd
         # submit edit
         NavigationHelper.open_home_page(self)
-        self.select_contact_by_id(id)
+        self.select_contact_by_id_and_edit(id)
         self.fill_contact_form(new_contacts_form)
         # submit contact modification
         wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
@@ -96,6 +96,10 @@ class ContactHelper:
 
     def select_contact_by_id(self, id):
         wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
+    def select_contact_by_id_and_edit(self, id):
+        wd = self.app.wd
         for element in wd.find_elements_by_xpath("//tr[@name='entry']"):
             cells = element.find_elements_by_tag_name("td")
             contact_id = element.find_element_by_name("selected[]").get_attribute("value")
@@ -104,23 +108,8 @@ class ContactHelper:
                 pass
             else:
                 element.find_element_by_css_selector("input[value='%s']" % id).click()
-                time.sleep(4)
-                #element.find_element_by_css_selector("input[value='%s']img[alt='Edit']" % id).click()
                 element.find_element_by_xpath("./td[8]").click()
-                #cells[7].click()
-                time.sleep(4)
                 break
-        #for element in wd.find_element_by_xpath("//tbody"):
-            #line = element.find_elements_by_xpath("//tr[@name='entry']")
-            #for element1 in line:
-                #contact_id = element1.find_element_by_name("selected[]").get_attribute("value")
-                #if contact_id != id:
-                    #pass
-                #else:
-                    #element1.find_element_by_css_selector("input[value='%s']" % id).click()
-                    #element1.find_element_by_xpath("./td[8]").click()
-
-
 
     def edit_first_contact(self):
         wd = self.app.wd
@@ -180,6 +169,36 @@ class ContactHelper:
             NavigationHelper.open_home_page(self)
         NavigationHelper.open_home_page(self)
         self.contact_cache = None
+
+    def add_contact_to_group_by_id(self, id, group):
+        wd = self.app.wd
+        NavigationHelper.open_home_page(self)
+        self.select_contact_by_id(id)
+        self.put_group_name_for_adding(group)
+        NavigationHelper.open_home_page(self)
+        self.contact_cache = None
+
+    def put_group_name_for_adding(self, group):
+        wd = self.app.wd
+        if group is not None:
+            wd.find_element_by_name("to_group").click()
+            Select(wd.find_element_by_css_selector("select[name=\"to_group\"]")).select_by_visible_text(group)
+            wd.find_element_by_name("add").click()
+
+    def remove_contact_from_group_by_id(self, group, id):
+        wd = self.app.wd
+        NavigationHelper.open_home_page(self)
+        self.put_group_name_for_deletion(group, id)
+        NavigationHelper.open_home_page(self)
+        self.contact_cache = None
+
+    def put_group_name_for_deletion(self, group, id):
+        wd = self.app.wd
+        if group is not None:
+            wd.find_element_by_name("group").click()
+            Select(wd.find_element_by_css_selector("select[name=\"group\"]")).select_by_visible_text(group)
+            wd.find_element_by_xpath("//input[@id='%s']" % id).click()
+            wd.find_element_by_name("remove").click()
 
     contact_cache = None
 
