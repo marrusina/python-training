@@ -178,27 +178,22 @@ class ContactHelper:
         NavigationHelper.open_home_page(self)
         self.contact_cache = None
 
+
     def put_group_name_for_adding(self, group):
         wd = self.app.wd
         if group is not None:
             wd.find_element_by_name("to_group").click()
-            Select(wd.find_element_by_css_selector("select[name=\"to_group\"]")).select_by_visible_text(group)
+            wd.find_element_by_css_selector("select[name='to_group'] [value='%s']" % group).click()
             wd.find_element_by_name("add").click()
 
-    def remove_contact_from_group_by_id(self, group, id):
-        wd = self.app.wd
-        NavigationHelper.open_home_page(self)
-        self.put_group_name_for_deletion(group, id)
-        NavigationHelper.open_home_page(self)
-        self.contact_cache = None
 
-    def put_group_name_for_deletion(self, group, id):
+    def remove_contact_from_group_by_id(self, group_with_contact_id):
         wd = self.app.wd
-        if group is not None:
-            wd.find_element_by_name("group").click()
-            Select(wd.find_element_by_css_selector("select[name=\"group\"]")).select_by_visible_text(group)
-            wd.find_element_by_xpath("//input[@id='%s']" % id).click()
-            wd.find_element_by_name("remove").click()
+        NavigationHelper.open_home_page(self)
+        wd.find_element_by_css_selector("select[name='group'] option[value='%s']" % group_with_contact_id).click()
+        wd.find_element_by_css_selector("td[class='center'] input[type='checkbox']").click()
+        wd.find_element_by_name("remove").click()
+
 
     contact_cache = None
 
