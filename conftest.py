@@ -27,6 +27,8 @@ def app(request):
     fixture.session.ensure_login(username= web_config["username"], password= web_config["password"])
     return fixture
 
+
+
 @pytest.fixture(scope="session")
 def db(request):
     db_config = load_config(request.config.getoption("--target"))['db']
