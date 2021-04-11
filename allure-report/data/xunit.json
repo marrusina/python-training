@@ -1,0 +1,93 @@
+{
+  "time" : {
+    "start" : 1618140741903,
+    "stop" : 1618140757707,
+    "duration" : 15804
+  },
+  "testSuites" : [ {
+    "uid" : "aebe42b68d297c4",
+    "name" : "test.test_add_group",
+    "title" : "Test add group",
+    "time" : {
+      "start" : 1618140741903,
+      "stop" : 1618140757707,
+      "duration" : 15804
+    },
+    "statistic" : {
+      "total" : 6,
+      "passed" : 3,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 3,
+      "broken" : 0
+    },
+    "description" : null,
+    "testCases" : [ {
+      "uid" : "547fcaa10107a53e",
+      "name" : "test_add_group[None:::]",
+      "title" : "Test add group [None:::]",
+      "time" : {
+        "start" : 1618140741903,
+        "stop" : 1618140750095,
+        "duration" : 8192
+      },
+      "severity" : "NORMAL",
+      "status" : "PASSED"
+    }, {
+      "uid" : "3a85b22c82a6dd0e",
+      "name" : "test_add_group[None:name:header|}%[Bf(4i>:footer nF9$Al^V I  \",d]",
+      "title" : "Test add group [None:name:header|}%[Bf(4i>:footer nF9$Al^V I  \",d]",
+      "time" : {
+        "start" : 1618140750096,
+        "stop" : 1618140751621,
+        "duration" : 1525
+      },
+      "severity" : "NORMAL",
+      "status" : "PASSED"
+    }, {
+      "uid" : "9ca3bbd4e89cee31",
+      "name" : "test_add_group[None:name\\\\`8VT:header[)0 Dtpjg3:footer]",
+      "title" : "Test add group [None:name\\\\`8VT:header[)0 Dtpjg3:footer]",
+      "time" : {
+        "start" : 1618140751622,
+        "stop" : 1618140753134,
+        "duration" : 1512
+      },
+      "severity" : "NORMAL",
+      "status" : "FAILED"
+    }, {
+      "uid" : "9db514d0532b35bd",
+      "name" : "test_add_group[None:name&8  <:headerdr3 p 'D>, \"k5UJpp:footerF]D)|uxKGgVHb}2]",
+      "title" : "Test add group [None:name&8  <:headerdr3 p 'D>, \"k5UJpp:footerF]D)|uxKGgVHb}2]",
+      "time" : {
+        "start" : 1618140753135,
+        "stop" : 1618140754648,
+        "duration" : 1513
+      },
+      "severity" : "NORMAL",
+      "status" : "FAILED"
+    }, {
+      "uid" : "be385c8dd1159b94",
+      "name" : "test_add_group[None:namez'c GTfuV:header@:footer\\\\FmAE']",
+      "title" : "Test add group [None:namez'c GTfuV:header@:footer\\\\FmAE']",
+      "time" : {
+        "start" : 1618140754650,
+        "stop" : 1618140756187,
+        "duration" : 1537
+      },
+      "severity" : "NORMAL",
+      "status" : "FAILED"
+    }, {
+      "uid" : "22616822b17e4228",
+      "name" : "test_add_group[None:name:header.) 5Wkkjt %:footer<,8Kia N.P ;S:p]",
+      "title" : "Test add group [None:name:header.) 5Wkkjt %:footer<,8Kia N.P ;S:p]",
+      "time" : {
+        "start" : 1618140756188,
+        "stop" : 1618140757707,
+        "duration" : 1519
+      },
+      "severity" : "NORMAL",
+      "status" : "PASSED"
+    } ]
+  } ]
+}

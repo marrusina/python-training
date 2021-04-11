@@ -1,0 +1,98 @@
+{
+  "uid" : "be385c8dd1159b94",
+  "name" : "test_add_group[None:namez'c GTfuV:header@:footer\\\\FmAE']",
+  "title" : "Test add group [None:namez'c GTfuV:header@:footer\\\\FmAE']",
+  "time" : {
+    "start" : 1618140754650,
+    "stop" : 1618140756187,
+    "duration" : 1537
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 3
+  },
+  "failure" : {
+    "message" : "AssertionError: assert [18:name`8VT:...N.P ;S:p, ...] == [18:name`8VT:h...N.P ;S:p, ...]\n  Left contains more items, first extra item: None:namez'c GTfuV:header@:footer\\FmAE'\n  Use -v to get the full diff",
+    "stackTrace" : "app = <fixture.application.Application object at 0x053C0470>\ndb = <fixture.db.DbFixture object at 0x053C0270>\njson_groups = None:namez'c GTfuV:header@:footer\\FmAE'\n\n    def test_add_group(app, db, json_groups):\n        group = json_groups\n        app.navigation.open_groups_page()\n        with pytest.allure.step('Given a group list'):\n            old_groups = db.get_group_list()\n        with pytest.allure.step('When I add a group %s to the list' % group):\n            app.group.create(group)\n        with pytest.allure.step('Then the new group list is equal to the old list with the added group'):\n            new_groups = db.get_group_list()\n            old_groups.append(group)\n>           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)\nE           AssertionError: assert [18:name`8VT:...N.P ;S:p, ...] == [18:name`8VT:h...N.P ;S:p, ...]\nE             Left contains more items, first extra item: None:namez'c GTfuV:header@:footer\\FmAE'\nE             Use -v to get the full diff\n\ntest\\test_add_group.py:16: AssertionError"
+  },
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "FAILED",
+  "suite" : {
+    "uid" : "aebe42b68d297c4",
+    "name" : "test.test_add_group",
+    "title" : "Test add group"
+  },
+  "steps" : [ {
+    "name" : "Given a group list",
+    "title" : "Given a group list",
+    "time" : {
+      "start" : 1618140754693,
+      "stop" : 1618140754694,
+      "duration" : 1
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "When I add a group None:namez'c GTfuV:header@:footer\\FmAE' to the list",
+    "title" : "When I add a group None:namez'c GTfuV:header@:footer\\FmAE' to the list",
+    "time" : {
+      "start" : 1618140754694,
+      "stop" : 1618140756182,
+      "duration" : 1488
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Then the new group list is equal to the old list with the added group",
+    "title" : "Then the new group list is equal to the old list with the added group",
+    "time" : {
+      "start" : 1618140756182,
+      "stop" : 1618140756184,
+      "duration" : 2
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "FAILED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "thread",
+    "value" : "22896-MainThread"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_add_group"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "host",
+    "value" : "rusina"
+  } ],
+  "parameters" : [ ]
+}

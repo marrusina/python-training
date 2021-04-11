@@ -1,0 +1,95 @@
+{
+  "uid" : "3a85b22c82a6dd0e",
+  "name" : "test_add_group[None:name:header|}%[Bf(4i>:footer nF9$Al^V I  \",d]",
+  "title" : "Test add group [None:name:header|}%[Bf(4i>:footer nF9$Al^V I  \",d]",
+  "time" : {
+    "start" : 1618140750096,
+    "stop" : 1618140751621,
+    "duration" : 1525
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 3
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "aebe42b68d297c4",
+    "name" : "test.test_add_group",
+    "title" : "Test add group"
+  },
+  "steps" : [ {
+    "name" : "Given a group list",
+    "title" : "Given a group list",
+    "time" : {
+      "start" : 1618140750150,
+      "stop" : 1618140750152,
+      "duration" : 2
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "When I add a group None:name:header|}%[Bf(4i>:footer nF9$Al^V I  \",d to the list",
+    "title" : "When I add a group None:name:header|}%[Bf(4i>:footer nF9$Al^V I  \",d to the list",
+    "time" : {
+      "start" : 1618140750152,
+      "stop" : 1618140751619,
+      "duration" : 1467
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Then the new group list is equal to the old list with the added group",
+    "title" : "Then the new group list is equal to the old list with the added group",
+    "time" : {
+      "start" : 1618140751619,
+      "stop" : 1618140751621,
+      "duration" : 2
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "thread",
+    "value" : "22896-MainThread"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_add_group"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "host",
+    "value" : "rusina"
+  } ],
+  "parameters" : [ ]
+}

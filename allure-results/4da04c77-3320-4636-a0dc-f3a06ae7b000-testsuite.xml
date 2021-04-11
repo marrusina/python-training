@@ -1,0 +1,267 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1618140741903" stop="1618140757707">
+  <name>test.test_add_group</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1618140741903" status="passed" stop="1618140750095">
+      <name>test_add_group[None:::]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="22896-MainThread"/>
+        <label name="host" value="rusina"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618140748616" status="passed" stop="1618140748619">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140748619" status="passed" stop="1618140750092">
+          <name>When I add a group None::: to the list</name>
+          <title>When I add a group None::: to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140750092" status="passed" stop="1618140750095">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618140750096" status="passed" stop="1618140751621">
+      <name>test_add_group[None:name:header|}%[Bf(4i&gt;:footer nF9$Al^V I  ",d]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="22896-MainThread"/>
+        <label name="host" value="rusina"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618140750150" status="passed" stop="1618140750152">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140750152" status="passed" stop="1618140751619">
+          <name>When I add a group None:name:header|}%[Bf(4i&gt;:footer nF9$Al^V I  ",d to the list</name>
+          <title>When I add a group None:name:header|}%[Bf(4i&gt;:footer nF9$Al^V I  ",d to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140751619" status="passed" stop="1618140751621">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618140751622" status="failed" stop="1618140753134">
+      <name>test_add_group[None:name\\`8VT:header[)0 Dtpjg3:footer]</name>
+      <failure>
+        <message>AssertionError: assert [18:name`8VT:...N.P ;S:p, ...] == [18:name`8VT:h...N.P ;S:p, ...]
+  At index 48 diff: None:name\`8VT:header[)0 Dtpjg3:footer != 67:name`8VT:header[)0 Dtpjg3:footer
+  Use -v to get the full diff</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x053C0470&gt;
+db = &lt;fixture.db.DbFixture object at 0x053C0270&gt;
+json_groups = None:name\`8VT:header[)0 Dtpjg3:footer
+
+    def test_add_group(app, db, json_groups):
+        group = json_groups
+        app.navigation.open_groups_page()
+        with pytest.allure.step('Given a group list'):
+            old_groups = db.get_group_list()
+        with pytest.allure.step('When I add a group %s to the list' % group):
+            app.group.create(group)
+        with pytest.allure.step('Then the new group list is equal to the old list with the added group'):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E           assert [18:name`8VT:...N.P ;S:p, ...] == [18:name`8VT:h...N.P ;S:p, ...]
+E             At index 48 diff: None:name\`8VT:header[)0 Dtpjg3:footer != 67:name`8VT:header[)0 Dtpjg3:footer
+E             Use -v to get the full diff
+
+test\test_add_group.py:16: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="22896-MainThread"/>
+        <label name="host" value="rusina"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618140751670" status="passed" stop="1618140751671">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140751671" status="passed" stop="1618140753120">
+          <name>When I add a group None:name\`8VT:header[)0 Dtpjg3:footer to the list</name>
+          <title>When I add a group None:name\`8VT:header[)0 Dtpjg3:footer to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140753120" status="failed" stop="1618140753123">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618140753135" status="failed" stop="1618140754648">
+      <name>test_add_group[None:name&amp;8  &lt;:headerdr3 p 'D&gt;, "k5UJpp:footerF]D)|uxKGgVHb}2]</name>
+      <failure>
+        <message>AssertionError: assert [18:name`8VT:...N.P ;S:p, ...] == [18:name`8VT:h...N.P ;S:p, ...]
+  Left contains more items, first extra item: None:name&amp;8  &lt;:headerdr3 p 'D&gt;, "k5UJpp:footerF]D)|uxKGgVHb}2
+  Use -v to get the full diff</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x053C0470&gt;
+db = &lt;fixture.db.DbFixture object at 0x053C0270&gt;
+json_groups = None:name&amp;8  &lt;:headerdr3 p 'D&gt;, "k5UJpp:footerF]D)|uxKGgVHb}2
+
+    def test_add_group(app, db, json_groups):
+        group = json_groups
+        app.navigation.open_groups_page()
+        with pytest.allure.step('Given a group list'):
+            old_groups = db.get_group_list()
+        with pytest.allure.step('When I add a group %s to the list' % group):
+            app.group.create(group)
+        with pytest.allure.step('Then the new group list is equal to the old list with the added group'):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E           assert [18:name`8VT:...N.P ;S:p, ...] == [18:name`8VT:h...N.P ;S:p, ...]
+E             Left contains more items, first extra item: None:name&amp;8  &lt;:headerdr3 p 'D&gt;, "k5UJpp:footerF]D)|uxKGgVHb}2
+E             Use -v to get the full diff
+
+test\test_add_group.py:16: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="22896-MainThread"/>
+        <label name="host" value="rusina"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618140753183" status="passed" stop="1618140753185">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140753185" status="passed" stop="1618140754641">
+          <name>When I add a group None:name&amp;8  &lt;:headerdr3 p 'D&gt;, "k5UJpp:footerF]D)|uxKGgVHb}2 to the list</name>
+          <title>When I add a group None:name&amp;8  &lt;:headerdr3 p 'D&gt;, "k5UJpp:footerF]D)|uxKGgVHb}2 to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140754641" status="failed" stop="1618140754644">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618140754650" status="failed" stop="1618140756187">
+      <name>test_add_group[None:namez'c GTfuV:header@:footer\\FmAE']</name>
+      <failure>
+        <message>AssertionError: assert [18:name`8VT:...N.P ;S:p, ...] == [18:name`8VT:h...N.P ;S:p, ...]
+  Left contains more items, first extra item: None:namez'c GTfuV:header@:footer\FmAE'
+  Use -v to get the full diff</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x053C0470&gt;
+db = &lt;fixture.db.DbFixture object at 0x053C0270&gt;
+json_groups = None:namez'c GTfuV:header@:footer\FmAE'
+
+    def test_add_group(app, db, json_groups):
+        group = json_groups
+        app.navigation.open_groups_page()
+        with pytest.allure.step('Given a group list'):
+            old_groups = db.get_group_list()
+        with pytest.allure.step('When I add a group %s to the list' % group):
+            app.group.create(group)
+        with pytest.allure.step('Then the new group list is equal to the old list with the added group'):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E           AssertionError: assert [18:name`8VT:...N.P ;S:p, ...] == [18:name`8VT:h...N.P ;S:p, ...]
+E             Left contains more items, first extra item: None:namez'c GTfuV:header@:footer\FmAE'
+E             Use -v to get the full diff
+
+test\test_add_group.py:16: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="22896-MainThread"/>
+        <label name="host" value="rusina"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618140754693" status="passed" stop="1618140754694">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140754694" status="passed" stop="1618140756182">
+          <name>When I add a group None:namez'c GTfuV:header@:footer\FmAE' to the list</name>
+          <title>When I add a group None:namez'c GTfuV:header@:footer\FmAE' to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140756182" status="failed" stop="1618140756184">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618140756188" status="passed" stop="1618140757707">
+      <name>test_add_group[None:name:header.) 5Wkkjt %:footer&lt;,8Kia N.P ;S:p]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="22896-MainThread"/>
+        <label name="host" value="rusina"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618140756239" status="passed" stop="1618140756240">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140756240" status="passed" stop="1618140757705">
+          <name>When I add a group None:name:header/) 5Wkkjt %:footer&lt;,8Kia N.P ;S:p to the list</name>
+          <title>When I add a group None:name:header/) 5Wkkjt %:footer&lt;,8Kia N.P ;S:p to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618140757705" status="passed" stop="1618140757707">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>
